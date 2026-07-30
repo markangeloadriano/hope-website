@@ -167,6 +167,15 @@
   .station{font-family:var(--mono);font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(245,241,232,0.5);}
   .station b{color:var(--paper);font-weight:500;}
 
+  /* ---------- about ---------- */
+  .about{background:var(--paper);padding:90px 0 40px;}
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:start;}
+  @media(max-width:780px){.about-grid{grid-template-columns:1fr;}}
+  .values{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .value-chip{background:var(--paper-dim);padding:20px;border-radius:4px;}
+  .value-chip b{display:block;font-family:var(--display);font-size:16px;font-weight:600;margin-bottom:6px;color:var(--brass-deep);}
+  .value-chip span{font-size:12.5px;color:var(--slate);line-height:1.4;display:block;}
+
   /* ---------- verticals ---------- */
   .verticals{background:var(--paper);padding:100px 0;}
   .section-head{max-width:640px;margin-bottom:56px;}
@@ -199,6 +208,58 @@
   }
   .vcard li:first-child{border-top:none;}
   .vcard li span:last-child{color:var(--slate);font-family:var(--mono);font-size:12.5px;}
+  .vpartner{
+    margin-top:22px;padding-top:18px;border-top:1px solid var(--line-dark);
+    font-size:12.5px;color:var(--slate);max-width:400px;
+  }
+  .vpartner strong{color:var(--brass-deep);font-weight:600;}
+
+  .allservices{background:var(--ink-soft);padding:90px 0;}
+  .allservices .section-tag{color:var(--brass);}
+  .allservices h2{color:var(--paper);}
+  .allservices .section-sub{color:rgba(245,241,232,0.62);}
+  .sgrid2{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:20px;}
+  @media(max-width:900px){.sgrid2{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.sgrid2{grid-template-columns:1fr;}}
+  .scard{background:var(--ink);padding:26px 24px;}
+  .scard b{display:block;font-family:var(--display);font-size:16px;font-weight:600;color:var(--paper);margin-bottom:8px;}
+  .scard span{font-size:12.5px;color:rgba(245,241,232,0.55);line-height:1.5;}
+
+  .partners{background:var(--paper-dim);padding:90px 0;}
+  .plabel{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--brass-deep);margin:36px 0 20px;
+  }
+  .plabel:first-of-type{margin-top:10px;}
+  .plogos{
+    display:flex;flex-wrap:wrap;align-items:center;gap:28px 40px;
+    padding:28px 0;border-top:1px solid var(--line-dark);
+  }
+  .plogos img{
+    height:30px;max-width:110px;object-fit:contain;
+    filter:grayscale(1) opacity(0.7);transition:filter .2s;
+  }
+  .plogos img:hover{filter:grayscale(0) opacity(1);}
+  .pchips{display:flex;flex-wrap:wrap;gap:14px;}
+  .pchip{background:var(--paper);border:1px solid var(--line-dark);padding:14px 18px;border-radius:4px;min-width:180px;}
+  .pchip b{display:block;font-family:var(--display);font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:3px;}
+  .pchip span{font-size:11.5px;color:var(--slate);font-family:var(--mono);}
+
+  .team{background:var(--paper);padding:90px 0;}
+  .tmgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px;}
+  @media(max-width:860px){.tmgrid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.tmgrid{grid-template-columns:1fr;}}
+  .tmcard{background:var(--paper-dim);padding:22px;border-radius:4px;}
+  .tmcard img{width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:14px;}
+  .tmcard b{display:block;font-family:var(--display);font-size:16px;font-weight:600;color:var(--ink);}
+  .tmcard span{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:var(--brass-deep);margin-top:4px;}
+  .tmcard p{font-size:12.5px;color:var(--slate);margin-top:14px;font-style:italic;line-height:1.5;}
+  .tmcard-lead{background:var(--ink);grid-row:span 1;}
+  .tmcard-lead b{color:var(--paper);}
+  .tmcard-lead p{color:rgba(245,241,232,0.65);}
+  .tmcard-more{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;border:1px dashed var(--line-dark);background:transparent;}
+  .tmcard-more b{color:var(--brass-deep);}
+  .tmcard-more span{color:var(--slate);text-transform:none;font-family:var(--body);letter-spacing:normal;margin-top:6px;font-size:12.5px;}
 
   /* ---------- journey ---------- */
   .journey{background:var(--ink-soft);color:var(--paper);padding:100px 0;}
@@ -226,6 +287,7 @@
   .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px;}
   @media(max-width:900px){.tgrid{grid-template-columns:1fr;}}
   .tcard{background:var(--paper);padding:32px;border:1px solid var(--line-dark);}
+  .tamount{font-family:var(--display);font-weight:600;font-size:26px;color:var(--brass-deep);margin-bottom:12px;}
   .tcard p{font-size:15px;line-height:1.6;margin-bottom:20px;}
   .tcard .who{font-family:var(--mono);font-size:12px;color:var(--slate);text-transform:uppercase;letter-spacing:0.04em;}
 
@@ -265,10 +327,22 @@
   .phone-pill{margin-top:auto;background:var(--brass);color:var(--ink);text-align:center;font-size:12px;font-weight:600;padding:11px;border-radius:20px;}
 
   /* ---------- cta / footer ---------- */
+  .faq{background:var(--paper);padding:90px 0;}
+  .faqlist{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);margin-top:20px;}
+  @media(max-width:780px){.faqlist{grid-template-columns:1fr;}}
+  .faqitem{background:var(--paper);padding:26px 28px;}
+  .faqitem b{display:block;font-family:var(--display);font-size:15.5px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+  .faqitem p{font-size:13px;color:var(--slate);line-height:1.5;}
+
   .closing{background:var(--paper);padding:110px 0 60px;text-align:center;}
   .closing h2{max-width:620px;margin:0 auto;}
   .closing .btn-primary{margin-top:34px;background:var(--brass-deep);color:var(--paper);}
   .closing .btn-primary:hover{background:var(--brass);}
+  .closing-contact{
+    margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--slate);
+  }
+  .closing-contact a{color:var(--brass-deep);border-bottom:1px solid transparent;}
+  .closing-contact a:hover{border-bottom-color:var(--brass-deep);}
 
   footer{background:var(--ink);color:rgba(245,241,232,0.55);padding:44px 0;font-size:13px;}
   .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
@@ -293,9 +367,10 @@
         HOPE
       </div>
       <div class="nav-links">
-        <a href="#verticals">Homes &amp; Cars</a>
-        <a href="#journey">The Journey</a>
-        <a href="#testimonials">Stories</a>
+        <a href="#services">Services</a>
+        <a href="#partners">Partners</a>
+        <a href="#team">Team</a>
+        <a href="#faq">FAQ</a>
         <a href="app.html">App</a>
       </div>
       <a href="#start" class="nav-cta">Start a search</a>
@@ -305,8 +380,8 @@
 
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow">Full concierge, one point of contact</div>
-    <h1>We walk the whole road with you —<br><em>search to signature.</em></h1>
+    <div class="eyebrow">Trusted financial solutions partner since 2022</div>
+    <h1>Making your dreams<br><em>turn into reality.</em></h1>
     <p class="hero-sub">HOPE pairs you with a single concierge who finds the home or car, arranges the financing, and manages every form — so the only thing you do is say yes.</p>
     <div class="hero-actions">
       <button class="btn-primary">Talk to a concierge</button>
@@ -319,11 +394,27 @@
         <svg class="route-key" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4" stroke="#a9835b" stroke-width="1.8"/><path d="M11 12h9M17 12v3.2M20 12v2.4" stroke="#a9835b" stroke-width="1.8" stroke-linecap="round"/></svg>
       </div>
       <div class="route-stations">
-        <div class="station"><b>01</b> Search</div>
-        <div class="station"><b>02</b> Finance</div>
-        <div class="station"><b>03</b> Sign</div>
-        <div class="station"><b>04</b> Keys in hand</div>
+        <div class="station"><b>01</b> Consultation</div>
+        <div class="station"><b>02</b> Documentation</div>
+        <div class="station"><b>03</b> Processing</div>
+        <div class="station"><b>04</b> Approval</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="section-tag">About us</div>
+      <h2>Financial solutions, built on trust since 2022.</h2>
+      <p class="section-sub" style="max-width:520px;">HOPE Account Specialist is a trusted financial services company helping individuals and families turn their goals into reality. We specialize in car acquisition and financing, alongside a wide range of housing, real estate, and insurance solutions — based in Brgy. Concepcion, Maharlika Highway, Cabanatuan City, Nueva Ecija.</p>
+    </div>
+    <div class="values reveal">
+      <div class="value-chip"><b>Integrity</b><span>Highest ethical standards in every dealing</span></div>
+      <div class="value-chip"><b>Excellence</b><span>Superior quality in every service</span></div>
+      <div class="value-chip"><b>Teamwork</b><span>Collaborating to reach common goals</span></div>
+      <div class="value-chip"><b>Client focus</b><span>Prioritizing your needs, always</span></div>
     </div>
   </div>
 </section>
@@ -346,6 +437,7 @@
           <li><span>Offer &amp; negotiation support</span><span>Included</span></li>
           <li><span>Closing paperwork review</span><span>Included</span></li>
         </ul>
+        <p class="vpartner">In partnership with <strong>Holy Hill Realty</strong> — your guide to your dream home.</p>
       </div>
       <div class="vcard reveal">
         <div class="vlabel">Cars</div>
@@ -357,6 +449,115 @@
           <li><span>Trade-in &amp; negotiation support</span><span>Included</span></li>
           <li><span>Title &amp; registration handling</span><span>Included</span></li>
         </ul>
+        <p class="vpartner">Run through our auto-financing arm, <strong>Autoloan Pro</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="allservices" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">The full lineup</div>
+      <h2>Eight services, one point of contact.</h2>
+      <p class="section-sub">Homes and cars are the headline, but the concierge model covers the whole financial picture.</p>
+    </div>
+    <div class="sgrid2">
+      <div class="scard reveal"><b>Auto Acquisition</b><span>New vehicle sourcing and bank financing, end to end.</span></div>
+      <div class="scard reveal"><b>House &amp; Lot</b><span>Property selection through mortgage processing and title transfer.</span></div>
+      <div class="scard reveal"><b>Car Insurance</b><span>Comprehensive, third-party, and personal accident coverage.</span></div>
+      <div class="scard reveal"><b>Housing Insurance</b><span>Fire, disaster, theft, and liability protection for your home.</span></div>
+      <div class="scard reveal"><b>Life Insurance</b><span>Term, whole life, and investment-linked policies.</span></div>
+      <div class="scard reveal"><b>Second-Hand Car</b><span>Used vehicle loan processing with partner banks.</span></div>
+      <div class="scard reveal"><b>Sangla Title / OR-CR</b><span>Secure, legal document collateralization assistance.</span></div>
+      <div class="scard reveal"><b>Trade-In</b><span>Fair valuation and seamless paperwork on your old vehicle.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="partners" id="partners">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Who we work with</div>
+      <h2>Real lenders. Real dealer brands.</h2>
+      <p class="section-sub">Your concierge shops your loan or your ride across these partners — you don't have to call each one yourself.</p>
+    </div>
+    <div class="plabel">Bank &amp; financing partners</div>
+    <div class="plogos">
+      <img src="assets/partners/banks/bdo.png" alt="BDO">
+      <img src="assets/partners/banks/bpi.jpg" alt="BPI">
+      <img src="assets/partners/banks/metrobank.png" alt="Metrobank">
+      <img src="assets/partners/banks/rcbc.png" alt="RCBC">
+      <img src="assets/partners/banks/securitybank.png" alt="Security Bank">
+      <img src="assets/partners/banks/chinabank.jpg" alt="China Bank">
+      <img src="assets/partners/banks/eastwest.jpg" alt="EastWest">
+      <img src="assets/partners/banks/psbank.png" alt="PSBank">
+      <img src="assets/partners/banks/maybank.svg" alt="Maybank">
+      <img src="assets/partners/banks/landbank.png" alt="LandBank">
+    </div>
+    <div class="plabel">Dealer brand partners</div>
+    <div class="plogos">
+      <img src="assets/partners/cars/toyota.png" alt="Toyota">
+      <img src="assets/partners/cars/honda.png" alt="Honda">
+      <img src="assets/partners/cars/nissan.jpg" alt="Nissan">
+      <img src="assets/partners/cars/ford.png" alt="Ford">
+      <img src="assets/partners/cars/hyundai.png" alt="Hyundai">
+      <img src="assets/partners/cars/kia.png" alt="Kia">
+      <img src="assets/partners/cars/subaru.png" alt="Subaru">
+      <img src="assets/partners/cars/isuzu.svg" alt="Isuzu">
+      <img src="assets/partners/cars/chevrolet.jpg" alt="Chevrolet">
+      <img src="assets/partners/cars/mg.png" alt="MG">
+      <img src="assets/partners/cars/geely.png" alt="Geely">
+      <img src="assets/partners/cars/byd.svg" alt="BYD">
+      <img src="assets/partners/cars/suzuki.svg" alt="Suzuki">
+    </div>
+    <div class="plabel">Real estate developer partners</div>
+    <div class="pchips">
+      <div class="pchip"><b>Deca Homes</b><span>Affordable housing · since 2018</span></div>
+      <div class="pchip"><b>Grand Victoria</b><span>Luxury residential · since 2018</span></div>
+      <div class="pchip"><b>Bella Vita</b><span>Residential · since 2018</span></div>
+      <div class="pchip"><b>Borland</b><span>Commercial &amp; residential · since 2020</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Meet the leadership</div>
+      <h2>The people behind the concierge.</h2>
+      <p class="section-sub">A 23-person team of account specialists, led by a leadership group with decades of combined experience.</p>
+    </div>
+    <div class="tmgrid">
+      <div class="tmcard tmcard-lead reveal">
+        <img src="assets/team/maritess.jpg" alt="Maritess S. Bauto">
+        <b>Maritess S. Bauto</b>
+        <span>Founder &amp; CEO</span>
+        <p>"Our mission is to provide hope through financial solutions that empower individuals and businesses."</p>
+      </div>
+      <div class="tmcard reveal">
+        <img src="assets/team/richcar.jpg" alt="Richcar Fernandez">
+        <b>Richcar Fernandez</b>
+        <span>Executive Officer</span>
+      </div>
+      <div class="tmcard reveal">
+        <img src="assets/team/donnabel.jpg" alt="Donnabel Cruz">
+        <b>Donnabel Cruz</b>
+        <span>Team Head</span>
+      </div>
+      <div class="tmcard reveal">
+        <img src="assets/team/dyna.jpg" alt="Dyna Layco">
+        <b>Dyna Layco</b>
+        <span>Team Head</span>
+      </div>
+      <div class="tmcard reveal">
+        <img src="assets/team/mariel.jpg" alt="Mariel De Guzman">
+        <b>Mariel De Guzman</b>
+        <span>Team Head</span>
+      </div>
+      <div class="tmcard tmcard-more reveal">
+        <b>+18 more</b>
+        <span>Account specialists, legal counsel &amp; engineering support</span>
       </div>
     </div>
   </div>
@@ -396,9 +597,9 @@
 <section class="stats">
   <div class="wrap">
     <div class="sgrid">
-      <div class="stat reveal"><b>6,400+</b><span>Buyers guided</span></div>
-      <div class="stat reveal"><b>11 days</b><span>Avg. search to offer</span></div>
-      <div class="stat reveal"><b>180+</b><span>Lender &amp; dealer partners</span></div>
+      <div class="stat reveal"><b>10</b><span>Bank &amp; financing partners</span></div>
+      <div class="stat reveal"><b>13</b><span>Dealer brand partners</span></div>
+      <div class="stat reveal"><b>5.0★</b><span>Rated on Google</span></div>
       <div class="stat reveal"><b>1</b><span>Concierge, start to finish</span></div>
     </div>
   </div>
@@ -407,21 +608,24 @@
 <section class="testi" id="testimonials">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-tag">Stories</div>
-      <h2>What buyers say about the road with HOPE.</h2>
+      <div class="section-tag">Recent transactions</div>
+      <h2>Real deals, closed through HOPE.</h2>
     </div>
     <div class="tgrid">
       <div class="tcard reveal">
-        <p>"I told my concierge my budget once. Everything after that — the lender calls, the inspection, the closing forms — happened without me chasing anyone."</p>
-        <div class="who">First-time homebuyer, Austin TX</div>
+        <div class="tamount">₱1,200,000</div>
+        <p>Vehicle acquisition closed — financed and delivered.</p>
+        <div class="who">Dec 12, 2025</div>
       </div>
       <div class="tcard reveal">
-        <p>"Bought a car from out of state and never worried about the title. My concierge caught a lien issue before I wired a cent."</p>
-        <div class="who">Car buyer, Tampa FL</div>
+        <div class="tamount">₱1,200,000</div>
+        <p>Vehicle acquisition closed — financed and delivered.</p>
+        <div class="who">Sep 09, 2025</div>
       </div>
       <div class="tcard reveal">
-        <p>"We used HOPE for the house and the car in the same year. Same relationship, same trust, two very different purchases."</p>
-        <div class="who">Family relocation, Denver CO</div>
+        <div class="tamount">₱1,200,000</div>
+        <p>Brand new car sold and financed for the client.</p>
+        <div class="who">Mar 02, 2025</div>
       </div>
     </div>
   </div>
@@ -449,7 +653,7 @@
     </div>
     <div class="phone reveal">
       <div class="phone-screen">
-        <div class="phone-top"><span>9:41</span><span>KEYLINE</span></div>
+        <div class="phone-top"><span>9:41</span><span>HOPE</span></div>
         <div class="phone-title">Your journey</div>
         <div class="phone-sub">123 Birchwood Ave · Home purchase</div>
         <div class="phone-card"><b>Financing approved</b><span>Rate locked at 6.1%</span></div>
@@ -461,23 +665,65 @@
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Questions</div>
+      <h2>Frequently asked questions.</h2>
+    </div>
+    <div class="faqlist">
+      <div class="faqitem reveal">
+        <b>How long does the loan approval process take?</b>
+        <p>Typically 3–5 working days once documentation is complete.</p>
+      </div>
+      <div class="faqitem reveal">
+        <b>Do you offer free initial consultations?</b>
+        <p>Yes — a free 30-minute consultation for new clients to discuss your needs.</p>
+      </div>
+      <div class="faqitem reveal">
+        <b>Can I get insurance without buying a vehicle or property?</b>
+        <p>Yes, standalone insurance policies are available.</p>
+      </div>
+      <div class="faqitem reveal">
+        <b>What if I have a low credit score?</b>
+        <p>We help you explore flexible financing options across our bank partners.</p>
+      </div>
+      <div class="faqitem reveal">
+        <b>Do you work with clients outside Cabanatuan?</b>
+        <p>Yes — we serve clients nationwide, working remotely with secure online tools.</p>
+      </div>
+      <div class="faqitem reveal">
+        <b>What makes this different from going straight to a bank?</b>
+        <p>We compare banks, manage the documents, and negotiate better deals on your behalf.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="closing" id="start">
   <div class="wrap">
     <div class="reveal">
       <div class="section-tag" style="text-align:center;">Ready when you are</div>
       <h2>Tell us what you're buying. We'll take it from there.</h2>
       <button class="btn-primary">Start a search</button>
+      <p class="closing-contact">
+        <a href="tel:+639277772420">0927 777 2420</a> &nbsp;·&nbsp;
+        <a href="mailto:Hopeacct2022@gmail.com">Hopeacct2022@gmail.com</a> &nbsp;·&nbsp;
+        <a href="https://www.facebook.com/profile.php?id=100091579431841" target="_blank" rel="noopener">Facebook</a>
+      </p>
+      <p class="closing-contact">Brgy. Concepcion, Maharlika Highway, Cabanatuan City, Nueva Ecija &nbsp;·&nbsp; Mon–Fri 8:00 AM–5:00 PM</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot-row">
-    <div>© 2026 HOPE Concierge. All rights reserved.</div>
+    <div>© 2026 HOPE Account Specialist. All rights reserved.</div>
     <div class="foot-links">
-      <a href="#verticals">Homes &amp; Cars</a>
-      <a href="#journey">Journey</a>
-      <a href="#app">App</a>
+      <a href="#services">Services</a>
+      <a href="#partners">Partners</a>
+      <a href="#team">Team</a>
+      <a href="#faq">FAQ</a>
     </div>
   </div>
 </footer>
