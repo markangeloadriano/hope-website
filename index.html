@@ -189,6 +189,35 @@
   .whcard h3{font-family:var(--display);font-size:18.5px;font-weight:600;margin-bottom:10px;line-height:1.28;color:var(--paper);}
   .whcard p{font-size:13.5px;color:rgba(245,241,232,0.6);line-height:1.55;}
 
+  /* ---------- search inventory ---------- */
+  .search-sec{background:var(--paper);padding:100px 0;}
+  .search-panel{margin-top:36px;}
+  .search-controls{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;}
+  @media(max-width:760px){.search-controls{grid-template-columns:1fr;}}
+  .search-input, .search-select{
+    font-family:var(--sans);font-size:14.5px;padding:14px 16px;
+    border:1px solid var(--line-dark);border-radius:4px;background:var(--paper);color:var(--ink);
+  }
+  .search-input:focus, .search-select:focus{outline:none;border-color:var(--brass-deep);}
+  .search-meta{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;margin-top:18px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+  .search-meta #resultCount{font-family:var(--mono);font-size:12.5px;letter-spacing:0.04em;color:var(--brass-deep);text-transform:uppercase;}
+  .search-meta-note{font-size:12px;color:var(--slate);}
+  .search-results{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;}
+  @media(max-width:900px){.search-results{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.search-results{grid-template-columns:1fr;}}
+  .pcard{border:1px solid var(--line-dark);border-radius:4px;padding:22px 20px;background:var(--paper-dim);}
+  .pcard .pbrand{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brass-deep);margin-bottom:8px;}
+  .pcard h4{font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:2px;color:var(--ink);}
+  .pcard .pvariant{font-size:12.5px;color:var(--slate);margin-bottom:14px;}
+  .pcard .pprice{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);}
+  .pcard .pmonthly{font-size:12px;color:var(--slate);margin-top:2px;}
+  .pcard .pdealer{font-size:11.5px;color:var(--slate);margin-top:14px;padding-top:12px;border-top:1px solid var(--line);}
+  .search-empty{margin-top:30px;font-size:14px;color:var(--slate);text-align:center;padding:40px 0;}
+  .search-empty a{color:var(--brass-deep);}
+  .search-more{grid-column:1/-1;text-align:center;padding:18px 0 4px;}
+  .search-more button{font-family:var(--mono);font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;background:none;border:1px solid var(--line-dark);border-radius:4px;padding:10px 22px;cursor:pointer;color:var(--ink);}
+  .search-more button:hover{border-color:var(--brass-deep);color:var(--brass-deep);}
+
   /* ---------- promo banner ---------- */
   .promo{background:var(--brass);padding:44px 0;text-align:center;}
   .promo-inner{max-width:640px;margin:0 auto;}
@@ -391,13 +420,13 @@
       </div>
       <div class="nav-links">
         <a href="#ofw">OFW Approvals</a>
+        <a href="#search">Search Inventory</a>
         <a href="#services">Services</a>
         <a href="#partners">Partners</a>
         <a href="#deals">Closed Deals</a>
         <a href="#faq">FAQ</a>
-        <a href="app.html">App</a>
       </div>
-      <a href="#start" class="nav-cta">Check if I qualify</a>
+      <a href="#search" class="nav-cta">Search for what you like</a>
     </nav>
   </div>
 </header>
@@ -408,7 +437,7 @@
     <h1>The bank said no.<br><em>We didn't stop there.</em></h1>
     <p class="hero-sub">HOPE specializes in getting car and home loans approved for OFWs, seafarers, self-employed applicants, and clients turned down elsewhere — matched to the right lender and packaged the right way.</p>
     <div class="hero-actions">
-      <button class="btn-primary">Check if I qualify</button>
+      <a href="#search" class="btn-primary" style="display:inline-block;">Search for what you like</a>
       <button class="btn-ghost">See real approvals</button>
     </div>
 
@@ -458,7 +487,41 @@
     </div>
     <div class="hero-actions" style="margin-top:44px;margin-bottom:0;">
       <a href="#deals" class="btn-primary" style="display:inline-block;background:var(--brass-deep);color:var(--paper);">See real approvals</a>
-      <a href="#start" class="btn-ghost" style="border-color:var(--line-dark);color:var(--ink);">Check if I qualify</a>
+      <a href="#search" class="btn-ghost" style="border-color:var(--line-dark);color:var(--ink);">Search for what you like</a>
+    </div>
+  </div>
+</section>
+
+<section class="search-sec" id="search">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Search inventory</div>
+      <h2>See what you can get approved for.</h2>
+      <p class="section-sub">Live pricing from our partner dealers. Search by model, or filter by brand and budget — every result can be financed through HOPE, OFW and previously-denied applicants included.</p>
+    </div>
+
+    <div class="search-panel reveal">
+      <div class="search-controls">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search a model, e.g. &quot;Innova&quot; or &quot;Jimny&quot;&hellip;" autocomplete="off">
+        <select id="brandFilter" class="search-select">
+          <option value="">All brands</option>
+        </select>
+        <select id="budgetFilter" class="search-select">
+          <option value="">Any budget</option>
+          <option value="0-800000">Under ₱800K</option>
+          <option value="800000-1200000">₱800K – ₱1.2M</option>
+          <option value="1200000-2000000">₱1.2M – ₱2M</option>
+          <option value="2000000-999999999">₱2M and up</option>
+        </select>
+      </div>
+      <div class="search-meta">
+        <span id="resultCount">Loading inventory…</span>
+        <span class="search-meta-note">Prices are dealer SRP — final financing rate depends on bank and applicant profile.</span>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+      <div id="searchEmpty" class="search-empty" style="display:none;">
+        No matches. Try a different model name, or <a href="#start">ask your concierge directly</a> — we may have it from a dealer not listed here yet.
+      </div>
     </div>
   </div>
 </section>
@@ -703,39 +766,6 @@
   </div>
 </section>
 
-<section class="appsec" id="app">
-  <div class="wrap app-inner">
-    <div class="reveal">
-      <div class="section-tag">Available now</div>
-      <h2>The concierge relationship, now in an app.</h2>
-      <p class="hero-sub" style="margin-top:18px;">Track your search, e-sign documents, message your concierge, and watch your loan move through underwriting — all from one screen, for both your home and car purchase.</p>
-      <ul class="applist">
-        <li>Real-time status on financing, offers, and closing milestones</li>
-        <li>Secure document upload and e-signature</li>
-        <li>Direct messaging with your assigned concierge</li>
-        <li>One thread that follows you from house search to car search</li>
-      </ul>
-      <div class="hero-actions" style="margin-top:34px;margin-bottom:0;">
-        <a href="app.html" class="btn-primary" style="display:inline-block;">Open the app</a>
-      </div>
-      <div class="storebadges">
-        <div class="badge">Works on Android &amp; iPhone</div>
-        <div class="badge">No app store required</div>
-      </div>
-    </div>
-    <div class="phone reveal">
-      <div class="phone-screen">
-        <div class="phone-top"><span>9:41</span><span>HOPE</span></div>
-        <div class="phone-title">Your journey</div>
-        <div class="phone-sub">123 Birchwood Ave · Home purchase</div>
-        <div class="phone-card"><b>Financing approved</b><span>Rate locked at 6.1%</span></div>
-        <div class="phone-card"><b>Inspection scheduled</b><span>Thu, Aug 6 · 10:00 AM</span></div>
-        <div class="phone-card"><b>Closing docs ready</b><span>2 signatures needed</span></div>
-        <div class="phone-pill">Message your concierge</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="faq" id="faq">
   <div class="wrap">
@@ -785,7 +815,7 @@
     <div class="reveal">
       <div class="section-tag" style="text-align:center;">Ready when you are</div>
       <h2>Denied elsewhere? Tell us what you're buying — we'll take it from there.</h2>
-      <button class="btn-primary">Check if I qualify</button>
+      <a href="#search" class="btn-primary" style="display:inline-block;">Search for what you like</a>
       <p class="closing-contact">
         <a href="tel:+639277772420">0927 777 2420</a> &nbsp;·&nbsp;
         <a href="mailto:Hopeacct2022@gmail.com">Hopeacct2022@gmail.com</a> &nbsp;·&nbsp;
@@ -814,6 +844,96 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   },{threshold:0.15});
   els.forEach(el=>io.observe(el));
+</script>
+
+<script src="products.js"></script>
+<script>
+  (function(){
+    const PAGE_SIZE = 12;
+    let shown = PAGE_SIZE;
+    let filtered = [];
+
+    const input = document.getElementById('searchInput');
+    const brandSel = document.getElementById('brandFilter');
+    const budgetSel = document.getElementById('budgetFilter');
+    const results = document.getElementById('searchResults');
+    const empty = document.getElementById('searchEmpty');
+    const count = document.getElementById('resultCount');
+
+    const money = n => n == null ? '' : '\u20b1' + n.toLocaleString('en-PH');
+
+    function init(){
+      if (typeof HOPE_PRODUCTS === 'undefined') {
+        count.textContent = 'Inventory unavailable right now.';
+        return;
+      }
+      const brands = [...new Set(HOPE_PRODUCTS.map(p=>p.brand))].sort();
+      brands.forEach(b=>{
+        const o = document.createElement('option');
+        o.value = b; o.textContent = b;
+        brandSel.appendChild(o);
+      });
+      render();
+    }
+
+    function render(){
+      const q = input.value.trim().toLowerCase();
+      const brand = brandSel.value;
+      const budget = budgetSel.value;
+      let [lo, hi] = budget ? budget.split('-').map(Number) : [0, Infinity];
+
+      filtered = HOPE_PRODUCTS.filter(p=>{
+        if (brand && p.brand !== brand) return false;
+        if (p.price < lo || p.price > hi) return false;
+        if (q){
+          const hay = (p.brand+' '+p.model+' '+p.variant+' '+(p.notes||'')).toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      shown = PAGE_SIZE;
+      draw();
+    }
+
+    function draw(){
+      results.innerHTML = '';
+      if (filtered.length === 0){
+        empty.style.display = 'block';
+        count.textContent = '0 matches';
+        return;
+      }
+      empty.style.display = 'none';
+      count.textContent = filtered.length + (filtered.length === 1 ? ' match' : ' matches');
+
+      filtered.slice(0, shown).forEach(p=>{
+        const card = document.createElement('div');
+        card.className = 'pcard';
+        card.innerHTML = `
+          <div class="pbrand">${p.brand}</div>
+          <h4>${p.model}</h4>
+          <div class="pvariant">${p.variant}</div>
+          <div class="pprice">${money(p.price)}</div>
+          ${p.monthly ? `<div class="pmonthly">from ${money(p.monthly)}/mo &middot; 5-yr est.</div>` : ''}
+          <div class="pdealer">${p.dealer}</div>
+        `;
+        results.appendChild(card);
+      });
+
+      if (shown < filtered.length){
+        const more = document.createElement('div');
+        more.className = 'search-more';
+        more.innerHTML = '<button type="button">Show more</button>';
+        more.querySelector('button').addEventListener('click', ()=>{ shown += PAGE_SIZE; draw(); });
+        results.appendChild(more);
+      }
+    }
+
+    input.addEventListener('input', render);
+    brandSel.addEventListener('change', render);
+    budgetSel.addEventListener('change', render);
+    init();
+  })();
 </script>
 
 </body>
