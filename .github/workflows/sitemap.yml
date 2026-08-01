@@ -16,7 +16,7 @@ jobs:
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url-path: https://yourdomain.com/  # Replace with your domain
+          base-url-path: https://hope-account.services/  # Replace with your domain
           drop-html-extension: false
 
       - name: Commit and Push Changes
