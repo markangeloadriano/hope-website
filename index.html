@@ -396,6 +396,25 @@
   .closing-contact a{color:var(--brass-deep);border-bottom:1px solid transparent;}
   .closing-contact a:hover{border-bottom-color:var(--brass-deep);}
 
+  .msgform-wrap{max-width:620px;margin:50px auto 0;text-align:left;background:var(--paper-dim);border:1px solid var(--line-dark);border-radius:6px;padding:36px 32px;}
+  .msgform-title{font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brass-deep);margin-bottom:20px;text-align:center;}
+  .msgform-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .msgform-grid .full{grid-column:1/-1;}
+  @media(max-width:600px){.msgform-grid{grid-template-columns:1fr;}}
+  .msgform label{display:block;font-size:12px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+  .msgform input, .msgform textarea{
+    width:100%;font-family:var(--sans);font-size:14.5px;padding:13px 14px;
+    border:1px solid var(--line-dark);border-radius:4px;background:var(--paper);color:var(--ink);
+    box-sizing:border-box;
+  }
+  .msgform input:focus, .msgform textarea:focus{outline:none;border-color:var(--brass-deep);}
+  .msgform textarea{resize:vertical;min-height:120px;font-family:var(--sans);}
+  .msgform .btn-primary{margin-top:6px;width:100%;background:var(--brass-deep);color:var(--paper);}
+  .msgform .btn-primary:hover{background:var(--brass);}
+  .msgform-status{margin-top:14px;font-size:13px;text-align:center;color:var(--slate);}
+  .msgform-status.ok{color:#3f7d4f;}
+  .msgform-status.err{color:#b3492f;}
+
   footer{background:var(--ink);color:rgba(245,241,232,0.55);padding:44px 0;font-size:13px;}
   .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
   .foot-links{display:flex;gap:26px;}
@@ -438,6 +457,7 @@
     <p class="hero-sub">HOPE specializes in getting car and home loans approved for OFWs, seafarers, self-employed applicants, and clients turned down elsewhere — matched to the right lender and packaged the right way.</p>
     <div class="hero-actions">
       <a href="#search" class="btn-primary" style="display:inline-block;">Search for what you like</a>
+      <button class="btn-ghost">See real approvals</button>
     </div>
 
     <div class="route">
@@ -524,43 +544,7 @@
     </div>
   </div>
 </section>
-<section>
- <div class="msgform-wrap">
-        <div class="msgform-title">Or send us a message</div>
-        <form class="msgform" id="contactForm" action="https://formsubmit.co/ajax/inquire@hope-account.services" method="POST">
-          <input type="hidden" name="_subject" value="New inquiry from HOPE website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-          <div class="msgform-grid">
-            <div>
-              <label for="mf-name">Name</label>
-              <input type="text" id="mf-name" name="Name" required>
-            </div>
-            <div>
-              <label for="mf-phone">Contact Number</label>
-              <input type="tel" id="mf-phone" name="Contact Number" required>
-            </div>
-            <div>
-              <label for="mf-email">Email Address</label>
-              <input type="email" id="mf-email" name="Email Address" required>
-            </div>
-            <div>
-              <label for="mf-subject">Subject</label>
-              <input type="text" id="mf-subject" name="Subject" required>
-            </div>
-            <div class="full">
-              <label for="mf-body">Message</label>
-              <textarea id="mf-body" name="Message" required></textarea>
-            </div>
-          </div>
-          <button type="submit" class="btn-primary">Send message</button>
-          <div class="msgform-status" id="mfStatus"></div>
-        </form>
-      </div>
-    </div>
-  </section>
 <section class="promo" id="promo">
   <div class="wrap promo-inner">
     <div class="promo-tag">Limited-time offer</div>
@@ -852,11 +836,46 @@
       <h2>Denied elsewhere? Tell us what you're buying — we'll take it from there.</h2>
       <a href="#search" class="btn-primary" style="display:inline-block;">Search for what you like</a>
       <p class="closing-contact">
-        <a href="tel:+639277772420">09695166514</a> &nbsp;·&nbsp;
-        <a href="mailto:inquire@hope-account.services">inquire@hope-account.services</a> &nbsp;·&nbsp;
+        <a href="tel:+639695166514">0969-516-6514</a> &nbsp;·&nbsp;
+        <a href="mailto:inquire@hope-accouunt.services">inquire@hope-accouunt.services</a> &nbsp;·&nbsp;
         <a href="https://www.facebook.com/profile.php?id=100091579431841" target="_blank" rel="noopener">Facebook</a>
       </p>
       <p class="closing-contact">Brgy. Concepcion, Maharlika Highway, Cabanatuan City, Nueva Ecija &nbsp;·&nbsp; Mon–Fri 8:00 AM–5:00 PM</p>
+
+      <div class="msgform-wrap">
+        <div class="msgform-title">Or send us a message</div>
+        <form class="msgform" id="contactForm" action="https://formsubmit.co/ajax/inquire@hope-account.services" method="POST">
+          <input type="hidden" name="_subject" value="New inquiry from HOPE website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="msgform-grid">
+            <div>
+              <label for="mf-name">Name</label>
+              <input type="text" id="mf-name" name="Name" required>
+            </div>
+            <div>
+              <label for="mf-phone">Contact Number</label>
+              <input type="tel" id="mf-phone" name="Contact Number" required>
+            </div>
+            <div>
+              <label for="mf-email">Email Address</label>
+              <input type="email" id="mf-email" name="Email Address">
+            </div>
+            <div>
+              <label for="mf-subject">Subject</label>
+              <input type="text" id="mf-subject" name="Subject" required>
+            </div>
+            <div class="full">
+              <label for="mf-body">Message</label>
+              <textarea id="mf-body" name="Message" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">Send message</button>
+          <div class="msgform-status" id="mfStatus"></div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -970,5 +989,46 @@
     init();
   })();
 </script>
+
+<script>
+  (function(){
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('mfStatus');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      status.textContent = '';
+      status.className = 'msgform-status';
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Request failed');
+        return res.json();
+      })
+      .then(() => {
+        status.textContent = "Thanks — your message is on its way. We'll get back to you shortly.";
+        status.classList.add('ok');
+        form.reset();
+      })
+      .catch(() => {
+        status.textContent = "Something went wrong sending your message. Please try again, or email us directly.";
+        status.classList.add('err');
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = 'Send message';
+      });
+    });
+  })();
+</script>
+
 </body>
 </html>
