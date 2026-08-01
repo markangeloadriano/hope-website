@@ -1,1 +1,26 @@
+name: Generate XML Sitemap
 
+on:
+  push:
+    branches:
+      - main  # Runs whenever you push new changes to the main branch
+
+jobs:
+  sitemap_job:
+    runs-on: ubuntu-latest
+    name: Generate Sitemap
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://yourdomain.com/  # Replace with your domain
+          drop-html-extension: false
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "auto: update sitemap.xml"
+          file_pattern: "sitemap.xml"
