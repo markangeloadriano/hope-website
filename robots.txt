@@ -1,10 +1,5 @@
-Plaintext
 User-agent: *
 Allow: /
+Disallow: /app.html
 
-# Disallow internal search pages or admin paths if any exist
-Disallow: /search
-Disallow: /admin/
-
-# Direct search crawlers to your sitemap
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://hope-account.services/sitemap.xml
